@@ -1,0 +1,207 @@
+# PHP snippets
+
+snippet = "<?=?>" i
+<?=$1?>
+endsnippet
+
+snippet =p "<?=_pre($1, '$1')?>"
+<?=_pre($1, '$1')?>
+endsnippet
+
+snippet fo "foreach"
+<? foreach ($1 as \$${2:key}=>\$${3:val}): ?>
+	$4
+<? endforeach; ?>
+endsnippet
+
+snippet if "if"
+<? if ( $1 ) : ?>
+	$2
+<? endif; ?>
+endsnippet
+
+snippet ifa "if ($user->allowed('"
+<? if ($user->allowed('$1', '$2')): ?>
+	$3
+<? endif; ?>
+endsnippet
+
+snippet ifm "if (defined('SYS_MODULE_SEKLYS')"
+<? if (defined('SYS_MODULE_SEKLYS') && (SYS_MODULE_SEKLYS == 'true')): ?>
+	$1
+<?php endif; ?>
+endsnippet
+
+
+snippet l "translate string" b
+<?=l("${VISUAL}")?>
+endsnippet
+
+snippet b "bold" b
+<b>${VISUAL}</b>
+endsnippet
+
+
+# html doc
+snippet html "minimal html" 
+<html>
+<head>
+	<title>$1</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/css/foundation.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	
+</head>
+<body>
+
+	<div class="grid-container">
+		<h1>$2</h1>	
+
+		<!-- Add a webcam -->
+		<div class="responsive-embed widescreen">
+			<!-- <video autoplay playsinline muted id="webcam"></video> -->
+			<video autoplay playsinline muted id="webcam" width="224" height="224"></video>
+		</div>
+
+	</div>
+		
+</body>
+</html>
+endsnippet
+
+
+# foundation zurb elements
+snippet r "row div"
+<div class="row columns">
+	$1
+</div>
+endsnippet
+
+snippet row "row 3 columns"
+<div class="row">
+	<div class="medium-4 columns">$1</div>
+	<div class="medium-4 columns"></div>
+	<div class="medium-4 columns end"></div>
+</div>
+endsnippet
+
+
+# HTML elements
+snippet a "a href" b
+<a href="$1">$2</a>
+endsnippet
+snippet h1 "h1"
+<h1>$1</h1>
+endsnippet
+snippet h2 "h2"
+<h2>$2</h2>
+endsnippet
+snippet h3 "h3"
+<h3>$2</h3>
+endsnippet
+
+
+snippet ul "ul" b
+<ul>
+	<li>$1</li>
+	<li></li>
+</ul>
+endsnippet
+snippet li "li" b
+<li>$1</li>
+endsnippet
+
+snippet p "h2"
+<p>
+	$2
+</p>
+endsnippet
+
+snippet d "div"
+<div class="$1">
+	$2
+</div>
+endsnippet
+
+
+snippet t "table"
+<table class="list_table" id="">
+	<thead>
+		<tr class="header">
+			<th width="1%"></th>
+			<th></th>
+			<th width="1%"><!-- actions --></th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	<? if (!empty(\$$1)) foreach (\$$1 as \$$2) : ?>
+	<tr>
+		<td>
+			<?=\$$2['']?>
+		</td>
+		<td>
+			<?=\$$2['']?>
+		</td>
+		<td>
+			<?=\$$2['']?>
+		</td>
+	</tr>
+	<? endforeach; ?>
+	
+	</tbody>
+</table>
+endsnippet
+snippet tr "tr"
+<tr>
+	$2
+</tr>
+endsnippet
+snippet td "td"
+<td>
+	$2
+</td>
+endsnippet
+
+
+# HTML forms
+snippet f "form" b
+<form id="$1" action="">
+$2
+</form>
+endsnippet
+snippet s "select"
+<select name="$1" id="$2">
+	$3
+</select>
+endsnippet
+snippet o "option"
+<option value="$1">$2</option>
+endsnippet
+snippet i "input" b
+<input type="$1" name="$2">
+endsnippet
+
+
+
+
+# javascript
+snippet ln "log" b
+console.log($1)
+endsnippet
+snippet on "js on" b
+$("$1").on('click', function()
+{
+	$2
+	return false;
+});
+endsnippet
+
+snippet js "script tag" b
+<script>
+	$(function() {
+		$1
+	});
+</script>
+endsnippet
+

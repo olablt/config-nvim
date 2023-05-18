@@ -1,0 +1,86 @@
+# NATIVE PHP SNIPPETS
+
+# if ()
+snippet if "if ()"
+if ($1)
+{
+	$2;
+}
+endsnippet
+
+# empty()
+snippet e "empty()"
+empty($1)
+endsnippet
+# !empty()
+snippet ne "empty()"
+!empty($1)
+endsnippet
+
+# foreach ()
+snippet fo "foreach ()"
+foreach (\$$1 as \$$2=>\$$3)
+{
+	\$$4;
+}
+endsnippet
+
+# function
+snippet f "function ()"
+function ${1:name}($2)
+{
+	$3
+}
+endsnippet
+
+# POST
+snippet p "$_POST[]" i
+\$_POST["${1:name}"]
+endsnippet
+# GET
+snippet g "$_GET[]" i
+\$_GET["${1:name}"]
+endsnippet
+
+# $this->
+snippet t "$this->" 
+$this->$1
+endsnippet
+
+
+snippet date "date()" i
+date('Y-m-d H:i:s')
+endsnippet
+snippet datem "date()" i
+date('Y-m-d H:i:s.v')
+endsnippet
+# $date = new DateTime('now');
+# $datetime_now = $date->format('Y-m-d H:i:s.v'); 
+
+# MVC snippets
+
+# $this->set
+snippet s "$this->set"
+$this->set("$1", \$$1);
+endsnippet
+
+snippet gm "get model"
+\$$1 = get_model2("$1s");
+\$$1->$2;
+endsnippet
+
+snippet epree "echo pre" b
+echo _pre($1, '$1'); exit;
+endsnippet
+snippet epre "echo pre" b
+echo _pre($1, '$1');
+endsnippet
+
+snippet id "$id"
+$id = isset($request) ? (int) $request[2] : null;
+endsnippet
+
+
+snippet nf "nf()" 
+nf(${VISUAL})
+endsnippet
