@@ -1,3 +1,15 @@
+-- mode
+--  "n" - normal mode
+--  "i" - insert mode
+--  "x" - visual mode
+--  "v" - visual and select mode
+local function map(m, k, v)
+    vim.keymap.set(m, k, v, { silent = true })
+end
+
+-- preserve register when pasting
+map("x", "p", "P")
+
 vim.g.mapleader = " "
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>w", ":w<CR>")

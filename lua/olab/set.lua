@@ -36,6 +36,7 @@ vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.history = 50
+vim.opt.inccommand = 'split'
 vim.cmd("nnoremap <silent> <CR> :noh<CR><CR>") -- clear search highlight
 
 
