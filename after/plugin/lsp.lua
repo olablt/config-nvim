@@ -80,6 +80,7 @@ vim.diagnostic.config({
 -- //////////////// even older stuff
 cmp.setup({
 	sources = cmp.config.sources({
+        { name = "nvim_lsp" },
 		{ name = "ultisnips" },
 		{ name = "copilot" },
 		{ name = "buffer" },
