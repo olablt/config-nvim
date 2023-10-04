@@ -11,6 +11,10 @@ nvim lua/olab/packer.lua
 :TSUpdate
 ```
 
+```
+:checkhealth
+```
+
 LSP, install packages with `i`, uninstall with `X`
 ```
 :Mason

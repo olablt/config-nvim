@@ -17,22 +17,40 @@ lsp.preset('recommended')
 -- CMP
 
 local cmp = require("cmp")
+local cmp_action = require('lsp-zero').cmp_action()
+
 -- local luasnip = require("luasnip")
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
+-- local cmp_mappings = lsp.defaults.cmp_mappings({
+--   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+--   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+--   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+--   ["<C-Space>"] = cmp.mapping.complete(),
+-- })
+-- cmp_mappings['<Tab>'] = nil
+-- cmp_mappings['<S-Tab>'] = nil
+-- lsp.setup_nvim_cmp({
+--   mapping = cmp_mappings
+-- })
+
+cmp.setup({
+    window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ['<Tab>'] = nil,
+    ['<S-Tab>'] = nil,
+    -- ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+    -- ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+    -- ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    -- ['<C-d>'] = cmp.mapping.scroll_docs(4),
+    })
 })
-
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
-
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
-})
-
 
 
 lsp.set_preferences({
