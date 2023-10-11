@@ -11,6 +11,8 @@ nvim lua/olab/packer.lua
 :TSUpdate
 ```
 
+Note: :TSUpdate will cause Packer to fail upon the first installation. It will run correctly when updating. To avoid this, call nvim-treesitter.install.update() directly.
+
 ```
 :checkhealth
 ```
