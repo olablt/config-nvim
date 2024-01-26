@@ -34,7 +34,8 @@ let g:mkdp_open_ip = ''
 " valid: `/path/with\ space/xxx`
 " invalid: `/path/with\\ space/xxx`
 " default: ''
-let g:mkdp_browser = 'google-chrome'
+let g:mkdp_browser = 'firefox'
+" let g:mkdp_browser = 'google-chrome'
 
 " set to 1, echo preview page url in command line when open preview page
 " default is 0

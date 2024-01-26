@@ -30,14 +30,18 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
 
+vim.cmd("colorscheme gotham")
 vim.opt.termguicolors = true
+vim.g.nvcode_termcolors = 256
+-- vim.g.airline_theme='oceanicnext'
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.history = 50
 vim.opt.inccommand = 'split'
-vim.cmd("nnoremap <silent> <CR> :noh<CR><CR>") -- clear search highlight
+-- vim.cmd("nnoremap <silent> <CR> :noh<CR><CR>") -- clear search highlight with enter
+vim.cmd("nnoremap <silent> <Esc> :noh<CR>") -- clear search highlight with esc
 
 
 vim.opt.scrolloff = 8

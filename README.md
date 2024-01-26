@@ -22,3 +22,9 @@ LSP, install packages with `i`, uninstall with `X`
 :Mason
 /gopls
 ```
+
+
+vim-go
+```
+:GoInstallBinaries
+```

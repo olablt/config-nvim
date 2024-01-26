@@ -2,13 +2,16 @@
 require("packer").startup(function(use)
 	use "wbthomason/packer.nvim"
 
-	use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} } }
 	use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'} }
 	use { 'nvim-treesitter/nvim-treesitter-context'}
 	use { 'nvim-treesitter/nvim-treesitter-textobjects'}
+    -- color schemes
+    use { 'mhartington/oceanic-next' }
+    use { 'christianchiarulli/nvcode-color-schemes.vim' }
+	use { 'whatyouhide/vim-gotham' } -- ??
+
     use {'machakann/vim-highlightedyank'}
 
-    use {'iamcco/markdown-preview.nvim'}
 
     use {'tpope/vim-commentary'}
 
@@ -17,9 +20,6 @@ require("packer").startup(function(use)
     -- golang toolset
     use {'fatih/vim-go'}
 
-    -- use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-    -- use {'fhill2/telescope-ultisnips.nvim'}
-
     use {'https://github.com/junegunn/fzf'}
     use {'https://github.com/junegunn/fzf.vim'}
 
@@ -27,22 +27,26 @@ require("packer").startup(function(use)
     -- autopairs
     use { "windwp/nvim-autopairs" }
 
-    -- -- use { "zbirenbaum/copilot.lua" }
-    -- use {
-    --     "zbirenbaum/copilot.lua",
-    --     cmd = "Copilot",
-    --     event = "InsertEnter",
-    --     config = function()
-    --         require("copilot").setup({})
-    --     end,
-    -- }
-
     -- use({
     --     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     --     config = function()
     --         require("lsp_lines").setup()
     --     end,
     -- })
+
+    -- -- within packer init {{{
+    --     use {'SirVer/ultisnips',
+    --     requires = {{'honza/vim-snippets', rtp = '.'}} -- snipMate & UltiSnip Snippets collection
+    --     ,
+    --     config = function()
+    --         vim.g.UltiSnipsExpandTrigger = '<Plug>(ultisnips_expand)'
+    --         vim.g.UltiSnipsJumpForwardTrigger = '<Plug>(ultisnips_jump_forward)'
+    --         vim.g.UltiSnipsJumpBackwardTrigger = '<Plug>(ultisnips_jump_backward)'
+    --         vim.g.UltiSnipsListSnippets = '<c-x><c-s>'
+    --         vim.g.UltiSnipsRemoveSelectModeMappings = 0
+    --     end
+    -- }
+    -- -- }}}
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -66,7 +70,10 @@ require("packer").startup(function(use)
             {'L3MON4D3/LuaSnip'},
             -- {'rafamadriz/friendly-snippets'},
         },
-}
+    }
+
+    -- use {'iamcco/markdown-preview.nvim'}
+	-- use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} } }
 
 end)
 
