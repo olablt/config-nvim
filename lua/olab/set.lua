@@ -30,7 +30,8 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
 
-vim.cmd("colorscheme gotham")
+-- vim.cmd("colorscheme gotham")
+vim.cmd("colorscheme github_dark_default")
 vim.opt.termguicolors = true
 vim.g.nvcode_termcolors = 256
 -- vim.g.airline_theme='oceanicnext'
