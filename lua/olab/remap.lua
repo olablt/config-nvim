@@ -45,7 +45,3 @@ vim.keymap.set("i", "kj", "<ESC>", opts)
 -- vim.keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
 
 
--- Copilot
-vim.api.nvim_set_keymap("i", "<C-l>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-vim.api.nvim_set_keymap("i", "<C-k>", 'copilot#Previous()', { silent = true, expr = true })
-vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Next()', { silent = true, expr = true })

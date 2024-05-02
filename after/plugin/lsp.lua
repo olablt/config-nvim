@@ -23,6 +23,10 @@ lsp_zero.configure('lua_ls', {
 -- LSP Actions
 lsp_zero.on_attach(function(client, bufnr)
   lsp_zero.default_keymaps({buffer = bufnr})
+
+  local opts = {buffer = bufnr}
+  local bind = vim.keymap.set
+  -- bind('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
 end)
 -- K: Displays hover information about the symbol under the cursor in a floating window. See :help vim.lsp.buf.hover().
 -- gd: Jumps to the definition of the symbol under the cursor. See :help vim.lsp.buf.definition().
@@ -39,9 +43,10 @@ end)
 -- ]d: Move to the next diagnostic. See :help vim.diagnostic.goto_next().
 -- lsp_zero.on_attach(function(client, bufnr)
 
---   local opts = {buffer = bufnr, remap = false}
+
+  -- local opts = {buffer = bufnr, remap = false}
 --   -- LSP key mappings
---   vim.keymap.set("n", "gd", function() vim.lsp_zero.buf.definition() end, opts)
+  -- vim.keymap.set("n", "gd", function() vim.lsp_zero.buf.definition() end, opts)
 --   vim.keymap.set("n", "K", function() vim.lsp_zero.buf.hover() end, opts)
 --   vim.keymap.set("n", "<leader>vws", function() vim.lsp_zero.buf.workspace_symbol() end, opts)
 --   vim.keymap.set("n", "<leader>e", function() vim.diagnostic.open_float() end, opts)

@@ -85,20 +85,30 @@ require("packer").startup(function(use)
         },
     }
 
-    -- ChatGPT
-    use({
-        "jackMort/ChatGPT.nvim",
-        config = function()
-            require("chatgpt").setup()
-        end,
+    -- -- ChatGPT
+    -- use({
+    --     "jackMort/ChatGPT.nvim",
+    --     config = function()
+    --         require("chatgpt").setup()
+    --     end,
+    --     requires = {
+    --         "MunifTanjim/nui.nvim",
+    --         "nvim-lua/plenary.nvim",
+    --         "folke/trouble.nvim",
+    --         "nvim-telescope/telescope.nvim"
+    --     }
+    -- })
+
+    -- ollama
+    use({ 
+        "David-Kunz/gen.nvim",
         requires = {
-            "MunifTanjim/nui.nvim",
+            "nvim-telescope/telescope-ui-select.nvim",
+            "nvim-telescope/telescope.nvim",
             "nvim-lua/plenary.nvim",
-            "folke/trouble.nvim",
-            "nvim-telescope/telescope.nvim"
+            -- "nvim-lua/popup.nvim"
         }
     })
-
     -- -- which-key
     -- use {
     --     "folke/which-key.nvim",
@@ -115,6 +125,8 @@ require("packer").startup(function(use)
 
     -- 
 	use { 'github/copilot.vim' }
+
+	-- use { 'huggingface/llm.nvim' }
 
     -- use {'iamcco/markdown-preview.nvim'}
 	-- use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} } }

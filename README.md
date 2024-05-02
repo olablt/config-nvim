@@ -11,6 +11,10 @@ nvim lua/olab/packer.lua
 :TSUpdate
 ```
 
+```
+TSInstall markdown markdown_inline
+```
+
 Note: :TSUpdate will cause Packer to fail upon the first installation. It will run correctly when updating. To avoid this, call nvim-treesitter.install.update() directly.
 
 ```
